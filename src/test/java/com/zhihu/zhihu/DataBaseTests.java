@@ -32,7 +32,7 @@ public class DataBaseTests {
         String salt = UUID.randomUUID().toString().replaceAll("-","").substring(0,5);
         user.setName("admin");
         user.setSalt(salt);
-        user.setPassword(ZhihuUtil.MD5("wyx12345" + salt));
+        user.setPassword(ZhihuUtil.MD5("admin" + salt));
         user.setHeadUrl(String.format("https://images.nowcoder.com/head/%dt.png", random.nextInt(1000)));
         userDAO.addUser(user);
         for (int i = 0; i < 30; i++) {
